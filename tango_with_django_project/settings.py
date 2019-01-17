@@ -12,9 +12,14 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+# ****FILE PATHS****
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+# New variable that will reference new templates directory
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+# Telling Django about new Static Folder creating new variable
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -27,8 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# New variable that will reference new templates directory
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+
 
 
 # Application definition
@@ -42,10 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rango',
 ]
-
-#print(__file__)
-#print(os.path.dirname(__file))
-#print(os.path.dirname(os.path.dirname(__file__)))
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,8 +125,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATICFILES_DIRS = [STATIC_DIR, ]
+
 STATIC_URL = '/static/'
-
-
 
 

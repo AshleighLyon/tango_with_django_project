@@ -1,8 +1,15 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- this always has to go first-->
+
+{% load staticfiles %} <!-- New line - informs that we will be using static templates within the template. Can now access media -->
+
 <html>
 	
 	<head>
 		<title>Rango</title>
+		<!-- CSS -->
+		<link rel="stylesheet" href="{% static "css/base.css" %}" />
+		<!-- JavaScript -->
+		<script src="{% static "js/jquery.js" %}"></script>
 	</head>
 
 	<body>
@@ -14,7 +21,11 @@
 		</div>
 
 		<div>
+			<!-- Image -->
 			<a href="/rango/about/">About</a><br />
+			<img src="{% static "images/rango.jpg" %}"
+				alt="Picture of Rango" /> 
+				<!-- alt means that if the picture cannot be loaded then the text will be displayed instead. -->
 		</div>
 	</body>
 
