@@ -14,6 +14,7 @@ def index(request):
 
 # Creating the view for the about page and adding a link back to index page
 def about(request):
-	return HttpResponse("Rango says here is the about page. <br/> <a href=' /rango/'> Index Page </a>")
+	context_dict = {'boldmessage': "This tutorial has been put together by Ashleigh Lyon."}
+	return render(request, 'rango/about.html', context=context_dict)
 
 

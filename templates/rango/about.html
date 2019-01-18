@@ -1,0 +1,41 @@
+<!DOCTYPE html> <!-- this always has to go first-->
+
+{% load staticfiles %} <!-- New line - informs that we will be using static templates within the template. Can now access media -->
+
+<html>
+	
+	<head>
+		<title>About Page</title>
+		<!-- CSS -->
+		<link rel="stylesheet" href="{% static "css/base.css" %}" />
+		<!-- JavaScript -->
+		<script src="{% static "js/jquery.js" %}"></script>
+	</head>
+
+	<body>
+
+		<h1>Rango says...</h1>
+		<div>
+			You're on the About Page! <br />
+			<strong>{{ boldmessage }}</strong><br />
+		</div>
+
+		<div>
+			<!-- Link back to Index Page -->
+			<a href="/rango/">Index</a><br />
+
+			<br> This is a static image</br>
+			<!-- Image -->
+			<img src="{% static "images/rango.jpg" %}"
+				alt="Picture of Rango" /> 
+				<!-- alt means that if the picture cannot be loaded then the text will be displayed instead. -->
+
+			<!-- Image -->
+			<br> This is a media image</div>br>
+			<img src="{{ MEDIA_URL}}cat.jpg"
+				alt="Picture of a cat" /> 
+
+		</div>
+	</body>
+
+</html>
