@@ -8,6 +8,9 @@ class Category(models.Model):
 	# Field name is unique (set to true) meaning this field
 	# can be used as a primar key.
 	name = models.CharField(max_length=128, unique=True)
+	
+	class Meta:
+		verbose_name_plural = 'Categories'
 		
 	def __str__(self): 
 		return self.name
