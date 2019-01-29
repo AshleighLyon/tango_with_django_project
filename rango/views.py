@@ -16,8 +16,9 @@ def index(request):
     # that will be passed to the template engine
 
     category_list = Category.objects.order_by('-likes')[:5]
-    context_dict = {'categories': category_list}
-    return render(request, 'rango/index.html', context_dict)
+    page_list = Page.objects.order_by('-views')[:5]
+    context_dict = {'categories': category_list, 'pages': page_list}
+    return render(request, 'rango/index.html', context=context_dict)
 
 
 # Creating the view for the index page and adding a link to the about page
