@@ -13,10 +13,16 @@
 	
 	<div>
 	{% if categories %}
+	<!-- 'ul' means unordered list -->
+	<!-- 'li' means list elements -->
+	<!-- 'a' means html hyperlink-->
 	<ul>
 		{% for category in categories %}
-			<li>{{ category.name }}</li>
-	{% endfor %}
+		<!-- Following line changed to add an HTML hyperlink -->
+		<li>
+		<a href="/rango/category/{{ category.slug }}">{{ category.name }}</a>
+		</li>
+		{% endfor %}
 	</ul>
 	{% else %}
 		<strong>There are no categories present.</strong>
