@@ -8,3 +8,6 @@ Progress:
 * Completed Chapter 4 + Exercises
 * Completed Chapter 5 + Exercises
 * Completed Chapter 6 + Exercises
+* Completed Chapter 7 + Exercises
+* Completed Chapter 8 + Exercises
+
