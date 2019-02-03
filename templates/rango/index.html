@@ -1,13 +1,14 @@
 <!DOCTYPE html> <!-- this always has to go first-->
 
 {% load staticfiles %} <!-- New line - informs that we will be using static templates within the template. Can now access media -->
+{% block title_block %}
+    Index
+{% endblock %}
 
-<html>
-<head>
-	<title>Rango</title>
-</head>
+{% block body_block %}
 
 <body>
+
 	<h1>Rango says...</h1>
 	<div>hey there partner!</div>
 	
@@ -20,9 +21,8 @@
 	<!-- 'a' means html hyperlink-->
 	<ul>
 		{% for category in categories %}
-		<!-- Following line changed to add an HTML hyperlink -->
 		<li>
-		<a href="/rango/category/{{ category.slug }}">{{ category.name }}</a>
+		<a href="{% url 'show_category' category.slug %}">{{ category.name }}</a>
 		</li>
 		{% endfor %}
 	</ul>
@@ -50,5 +50,5 @@
 		<a href="/rango/add_category/">Add a New Category</a><br />
 		<img src="{% static "images/rango.jpg" %}" alt="Picture of Rango" />
 	</div>
-</body>
+{% endblock %}
 </html>

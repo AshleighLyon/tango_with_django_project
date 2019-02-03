@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 
-<html>
-	<head>
-		<title>Rango</title>
-	</head>
 
-	<body>
- 		<h1>Add a Category</h1>
+{% block title_block %}
+    {{ add_category }}
+{% endblock %}
+
+	{% block body_block %}
+		<h1>Rango</h1>
+ 		<h2>Add a Category</h2>
  		<div>
  			<!-- Form element has been added as a POST Request-->
  			<form id="category_form" method="post" action="/rango/add_category/">
@@ -24,5 +25,4 @@
  				<input type="submit" name="submit" value="Create Category" />
  			</form>
  		</div>
- 	</body>
- </html>
+ 	{% endblock %}
