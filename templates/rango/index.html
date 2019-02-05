@@ -2,7 +2,7 @@
 
 {% load staticfiles %} <!-- New line - informs that we will be using static templates within the template. Can now access media -->
 {% block title_block %}
-    Index
+    Home Page <!-- Index -->
 {% endblock %}
 
 {% block body_block %}
@@ -10,7 +10,13 @@
 <body>
 
 	<h1>Rango says...</h1>
-	<div>hey there partner!</div>
+	<div>
+		{% if user.is_authenticated %}
+			howdy {{ user.username }}!
+		{% else %}
+			hey there partner!
+		{% endif %}
+	</div>
 	
 	<div>
 		<h3>Most Liked Categories</h3>	
